@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Katastrophe Press</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #eee;
+      font-family: Georgia, serif;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 45px;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .book {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .cover-placeholder {
+      width: 220px;
+      height: 330px;
+      background: #222;
+      border: 1px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #888;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .author {
+      color: #aaa;
+      margin-top: -15px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #eee;
+      color: #111;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .button:hover {
+      background: #ccc;
+    }
+
+    .about {
+      margin-top: 70px;
+      padding-top: 35px;
+      border-top: 1px solid #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      font-family: Arial, sans-serif;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 650px) {
+      .book {
+        grid-template-columns: 1fr;
+      }
+
+      .cover-placeholder {
+        margin: auto;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Katastrophe Press</h1>
+  <p>Independent fiction from the darker corners.</p>
+</header>
+
+<main>
+
+  <section class="book">
+
+    <div class="cover-placeholder">
+      Book cover goes here
+    </div>
+
+    <div>
+      <h2>What the Wicked Want</h2>
+      <p class="author">by Marlee Corvin</p>
+
+      <p>
+        A crime novel set inside a world of secrets, desire, and danger.
+      </p>
+
+      <p>
+        <!-- We will replace this with your real book description. -->
+      </p>
+
+      <a class="button"
+         href="https://www.amazon.com/dp/B0GVRS4CY3"
+         target="_blank">
+         Buy on Amazon
+      </a>
+    </div>
+
+  </section>
+
+  <section class="about">
+    <h2>About Marlee Corvin</h2>
+
+    <p>
+      Marlee Corvin writes crime fiction about people who make questionable
+      decisions in interesting places.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Katastrophe Press
+</footer>
+
+</body>
+</html>
