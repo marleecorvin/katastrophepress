@@ -6,6 +6,8 @@
 
   <title>Katastrophe Press</title>
 
+  <link rel="icon" type="image/png" href="KPlogoNEW.png">
+
   <style>
     :root {
       --bg: #07090d;
@@ -181,10 +183,26 @@
       color: var(--muted);
     }
 
-    .about-logo {
-  width: 220px;
+   .about-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-logo {
+  width: 90px;
   max-width: 100%;
-  margin-bottom: 28px;
+}
+
+@media (max-width: 650px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-logo {
+    width: 100px;
+  }
 }
 
     footer {
@@ -282,19 +300,25 @@
 
   <section class="about" id="about">
 
-  <img src="KPlogoNEW.png"
-       alt="Katastrophe Press logo"
-       class="about-logo">
+  <div class="about-grid">
 
-  <div class="section-title">About Katastrophe Press</div>
+    <img src="KPlogoNEW.png"
+         alt="Katastrophe Press logo"
+         class="about-logo">
 
-  <p>
-    Katastrophe Press is an independent imprint for fiction with sharp edges and dark corners. No ashes, no phoenix. No chaos, no growth.
-  </p>
+    <div>
+      <div class="section-title">About KP</div>
 
-  <a class="button" href="mailto:contact@katastrophepress.com">
-    Contact Katastrophe
-  </a>
+      <p>
+        Katastrophe Press is an independent imprint for fiction with sharp edges and dark corners. No ashes, no phoenix. No chaos, no growth.
+      </p>
+
+      <a class="button" href="mailto:contact@katastrophepress.com">
+        Contact
+      </a>
+    </div>
+
+  </div>
 
 </section>
 
