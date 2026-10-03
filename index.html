@@ -203,6 +203,30 @@
   .about-logo {
     width: 100px;
   }
+
+  .author-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.author-photo {
+  width: 140px;
+  max-width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+@media (max-width: 650px) {
+  .author-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .author-photo {
+    width: 120px;
+  }
+}
 }
 
     footer {
@@ -290,13 +314,27 @@
 
   </section>
 
-  <section class="about" id="author">
-    <div class="section-title">Marlee Corvin</div>
+<section class="about" id="author">
 
-    <p>
-      Marlee Corvin is a fiction writer and author of the crime thriller "What the Wicked Want." An avid reader, too, she enjoys books that take deep dives into what makes characters tick.
-    </p>
-  </section>
+  <div class="author-grid">
+
+    <img src="marleeauthorpic.png"
+         alt="Author photo of Marlee Corvin"
+         class="author-photo">
+
+    <div>
+      <div class="section-title">Marlee Corvin</div>
+
+      <p>
+        Marlee Corvin is a fiction writer and author of the crime thriller
+        <em>What the Wicked Want</em>. An avid reader, too, she enjoys books
+        that take deep dives into what makes characters tick.
+      </p>
+    </div>
+
+  </div>
+
+</section>
 
   <section class="about" id="about">
 
