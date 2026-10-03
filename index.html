@@ -196,6 +196,20 @@
 }
 
 @media (max-width: 650px) {
+}
+  .about-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-logo {
+  width: 90px;
+  max-width: 100%;
+}
+
+@media (max-width: 650px) {
   .about-grid {
     grid-template-columns: 1fr;
   }
@@ -209,6 +223,15 @@
   grid-template-columns: 90px 1fr;
   gap: 24px;
   align-items: start;
+}
+
+.author-photo {
+  width: 90px;
+  max-width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+}
 }
 
 .author-photo {
