@@ -7,109 +7,196 @@
   <title>Katastrophe Press</title>
 
   <style>
+    :root {
+      --bg: #07090d;
+      --panel: #0f1319;
+      --text: #f2f4f7;
+      --muted: #9ca6b3;
+      --line: #222a35;
+      --accent: #aebfd7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #111;
-      color: #eee;
-      font-family: Georgia, serif;
+      background:
+        radial-gradient(circle at top left, rgba(120, 145, 175, .14), transparent 35%),
+        linear-gradient(180deg, #090c11 0%, #05070a 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
     header {
-      text-align: center;
-      padding: 70px 20px 45px;
-      border-bottom: 1px solid #333;
+      padding: 34px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 7, 10, .88);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 3px;
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    header p {
-      color: #aaa;
-      margin-top: 10px;
-      font-style: italic;
+    .brand {
+      font-size: 1.1rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: .95rem;
+    }
+
+    .nav a:hover {
+      color: var(--text);
     }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
-      padding: 50px 25px;
+      padding: 72px 24px 80px;
     }
 
-    .book {
+    .hero {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .cover-placeholder {
-      width: 220px;
-      height: 330px;
-      background: #222;
-      border: 1px solid #555;
-      display: flex;
+      grid-template-columns: minmax(260px, 360px) 1fr;
+      gap: 64px;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #888;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-top: 0;
+    .cover {
+      width: 100%;
+      display: block;
+      border-radius: 3px;
+      box-shadow:
+        0 24px 60px rgba(0,0,0,.55),
+        0 0 0 1px rgba(255,255,255,.05);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .8rem;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: .98;
+      margin: 0 0 18px;
+      font-weight: 400;
     }
 
     .author {
-      color: #aaa;
-      margin-top: -15px;
-      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 34px;
+    }
+
+    .tagline {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      color: #dce3eb;
+      margin-bottom: 26px;
+      max-width: 650px;
+    }
+
+    .description {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.03rem;
     }
 
     .button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: #eee;
-      color: #111;
+      margin-top: 30px;
+      padding: 13px 22px;
+      border: 1px solid var(--accent);
+      color: var(--text);
       text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: .2s ease;
     }
 
     .button:hover {
-      background: #ccc;
+      background: var(--accent);
+      color: #07090d;
+    }
+
+    section {
+      margin-top: 90px;
+    }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      margin-bottom: 14px;
+      font-weight: 400;
     }
 
     .about {
-      margin-top: 70px;
-      padding-top: 35px;
-      border-top: 1px solid #333;
+      max-width: 760px;
+      border-top: 1px solid var(--line);
+      padding-top: 38px;
+    }
+
+    .about p {
+      color: var(--muted);
     }
 
     footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 24px 45px;
       text-align: center;
-      padding: 35px 20px;
-      color: #777;
-      font-family: Arial, sans-serif;
-      font-size: .9rem;
+      color: #6f7782;
+      font-size: .85rem;
+      letter-spacing: .04em;
     }
 
-    @media (max-width: 650px) {
-      .book {
+    @media (max-width: 800px) {
+      .hero {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      .cover-placeholder {
+      .cover-wrap {
+        max-width: 420px;
         margin: auto;
       }
 
-      header h1 {
-        font-size: 2.2rem;
+      header {
+        position: static;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 18px;
       }
     }
   </style>
@@ -118,41 +205,59 @@
 <body>
 
 <header>
-  <h1>Katastrophe Press</h1>
-  <p>Independent fiction from the darker corners.</p>
+  <div class="nav">
+    <div class="brand">Katastrophe Press</div>
+
+    <div class="nav-links">
+      <a href="#book">Book</a>
+      <a href="#author">Author</a>
+    </div>
+  </div>
 </header>
 
 <main>
 
-  <section class="book">
+  <section class="hero" id="book">
 
-    <div class="cover-placeholder">
-      Book cover goes here
+    <div class="cover-wrap">
+      <img class="cover" src="wtww-cover.jpg" alt="Cover of What the Wicked Want by Marlee Corvin">
     </div>
 
     <div>
-      <h2>What the Wicked Want</h2>
-      <p class="author">by Marlee Corvin</p>
+      <div class="eyebrow">A crime novel</div>
 
-      <p>
-        A crime novel set inside a world of secrets, desire, and danger.
-      </p>
+      <h1>What the Wicked Want</h1>
 
-      <p>
-        <!-- We will replace this with your real book description. -->
-      </p>
+      <div class="author">by Marlee Corvin</div>
+
+      <div class="tagline">
+        Every body has a breaking point.
+      </div>
+
+      <div class="description">
+        <p>
+          In a world built on secrets, desire, and carefully negotiated boundaries,
+          one crime threatens to expose far more than anyone intended.
+        </p>
+
+        <p>
+          <strong>What the Wicked Want</strong> is a dark crime novel set inside a fetish club,
+          where trust is currency and everybody has something to hide.
+        </p>
+      </div>
 
       <a class="button"
          href="https://www.amazon.com/dp/B0GVRS4CY3"
-         target="_blank">
+         target="_blank"
+         rel="noopener noreferrer">
          Buy on Amazon
       </a>
     </div>
 
   </section>
 
-  <section class="about">
-    <h2>About Marlee Corvin</h2>
+  <section class="about" id="author">
+    <div class="section-title">Marlee Corvin</div>
 
     <p>
       Marlee Corvin is a fiction writer and author of the crime thriller "What the Wicked Want." An avid reader, too, she enjoys books that take deep dives into what makes characters tick.
